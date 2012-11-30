@@ -6,6 +6,8 @@
 (server-start)
 (setq mac-function-modifier 'hyper)
 
+(add-to-list 'load-path (concat user-emacs-directory user-login-name))
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -27,14 +29,21 @@
     find-file-in-project
     flymake
     graphviz-dot-mode
+    guru-mode
+    helm
+    helm-projectile
     idle-highlight-mode
     ido-ubiquitous
     inf-ruby
     iy-go-to-char
     multiple-cursors
     magit
+    markdown-mode
     nrepl
     paredit
+    powerline
+    projectile
+    rainbow-delimiters
     smex
     smart-forward
     starter-kit
@@ -51,10 +60,6 @@
 (dolist (p my-elpa-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
-(require 'unbound)
-(require 'undo-tree)
-(global-undo-tree-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

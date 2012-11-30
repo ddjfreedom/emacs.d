@@ -31,3 +31,5 @@
                       '("\C-zX" sunrise-cd))
 
 (global-set-key (kbd "H-SPC") 'set-mark-command)
+
+(global-unset-key (kbd "s-z"))
